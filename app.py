@@ -8,7 +8,7 @@ def validate_username(username):
     if len(username) < 4 or len(username) > 20:
         return False
 
-    return True
+    return username.replace("_", "").isalnum()
 
 
 def create_profile_message(username, role="student"):
