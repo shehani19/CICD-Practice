@@ -1,8 +1,8 @@
 import subprocess
 def show_directory_contents():
-    """Intentionally insecure example for security testing."""
-    subprocess.call("dir", shell=True)
-    
+    """Safer version for Windows."""
+    subprocess.run(["cmd", "/c", "dir"], check=True)
+
 def validate_username(username):
     """Return True when a username is acceptable."""
     if not isinstance(username, str):
