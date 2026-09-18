@@ -1,4 +1,10 @@
 import subprocess
+import secrets
+
+def generate_reset_code():
+    """Generate a secure six-digit reset code."""
+    return str(secrets.randbelow(900000) + 100000)
+
 def show_directory_contents():
     """Safer version for Windows."""
     subprocess.run(["cmd", "/c", "dir"], check=True)
